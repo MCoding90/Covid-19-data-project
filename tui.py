@@ -19,11 +19,9 @@ def welcome():
     :return: Does not return anything.
     """
 
-    print(_________________________)
+    print('-----------------------')
     print('COVID-19 (January) Data')
-    print(_________________________)
-
-
+    print('-----------------------')
 
 def error(msg):
     """
@@ -36,8 +34,9 @@ def error(msg):
     :param msg: a string containing an error message
     :return: does not return anything
     """
-    # TODO: Your code here
-    pass
+
+msg = ("Cannot read file!")
+print(f"Error! {msg}")
 
 
 def progress(operation, value):
