@@ -23,7 +23,8 @@ def welcome():
     print('COVID-19 (January) Data')
     print('-----------------------')
 
-def error(msg):
+
+def error(msg = "Cannot read file!"):
     """
     Task 2: Display an error message.
 
@@ -35,8 +36,7 @@ def error(msg):
     :return: does not return anything
     """
 
-msg = ("Cannot read file!")
-print(f"Error! {msg}")
+    print(f"Error! {msg}")
 
 
 def progress(operation, value):
