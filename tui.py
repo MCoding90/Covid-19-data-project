@@ -24,7 +24,7 @@ def welcome():
     print('-----------------------')
 
 
-def error(msg = "Cannot read file!"):
+def error(msg="Cannot read file!"):
     """
     Task 2: Display an error message.
 
@@ -39,7 +39,7 @@ def error(msg = "Cannot read file!"):
     print(f"Error! {msg}")
 
 
-def progress(operation, value):
+def progress(operation="Loading file", value=0):
     """
     Task 3: Display a message to indicate the progress of an operation.
 
@@ -57,8 +57,8 @@ def progress(operation, value):
     :param value: an integer indicating the amount of progress made
     :return: does not return anything
     """
-    # TODO: Your code here
-    pass
+
+    print(f" {operation} {status}")
 
 
 def menu(variant=0):
@@ -92,7 +92,66 @@ def menu(variant=0):
     :return: nothing if invalid selection otherwise an integer for a valid selection
     """
     # TODO: Your code here
-    pass
+    variant = input("Please choose one of the following menu:")
+
+    if variant == '0':
+        option = input("Please select an option")
+        if option == '1':
+            return 1
+        elif option == '2':
+            return 2
+        elif option == '3':
+            return 3
+        elif option == '4':
+            return 4
+
+        print("[1] Process Data")
+        print("[2] Visualise Data")
+        print("[3] Export Data")
+        print("[4] Exit")
+
+    elif variant == '1':
+        option = input("Please select an option")
+        if option == '1':
+            return 1
+        elif option == '2':
+            return 2
+        elif option == '3':
+            return 3
+        elif option == '4':
+            return 4
+
+        print("[1] Record by Serial Number")
+        print("[2] Records by Observation Date")
+        print("[3] Group Records by Country/Region")
+        print("[4] Summarise Records")
+
+    elif variant == '2':
+        option = input("Please select an option")
+        if option == '1':
+            return 1
+        elif option == '2':
+            return 2
+        elif option == '3':
+            return 3
+
+        print("[1] Country/Region Pie Chart")
+        print("[2] Observations Chart")
+        print("[3] Animated Summary")
+
+    elif variant == '3':
+        option = input("Please select an option")
+        if option == '1':
+            return 1
+        elif option == '2':
+            return 2
+
+        print("[1] All Data")
+        print("[2] Data for Specific Country/Region")
+    else:
+        print("Wrong option selection! Please choose a valid option!")
+
+    return variant
 
 
 def total_records(num_records):
