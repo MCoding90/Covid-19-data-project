@@ -57,8 +57,12 @@ def progress(operation="Loading file", value=0):
     :param value: an integer indicating the amount of progress made
     :return: does not return anything
     """
-
-    print(f" {operation} {status}")
+    if value == 0:
+        print(f" {operation} has started")
+    if value >= 1 and value <= 99:
+        print(f"{value} in progress")
+    if value == 100:
+        print(f"{value} % completed")
 
 
 def menu(variant=0):
