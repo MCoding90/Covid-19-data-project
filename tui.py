@@ -171,11 +171,11 @@ def total_records(num_records):
     :param num_records: the total number of movies in the data set
     :return: Does not return anything
     """
-    # TODO: Your code here
-    pass
+
+    print(f"There are {num_records} in the data set")
 
 
-def serial_number():
+def serial_number(serial_num):
     """
     Task 6: Read in the serial number of a record and return the serial number.
 
@@ -185,7 +185,10 @@ def serial_number():
     :return: the serial number for a record
     """
     # TODO: Your code here
-    pass
+
+    print("Please enter a serial number for a record: ")
+    serial_num = int(input())
+    return serial_num
 
 
 def observation_dates():
