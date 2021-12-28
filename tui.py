@@ -196,14 +196,21 @@ def observation_dates():
     Task 7: Read in and return a list of observation dates.
 
     The function should ask the user to enter some observation dates
-    This should be entered in the format dd/mm/yyyy where dd is two-digit day, mm is two digit month and yyyy is
+    This should be entered in the format mm/dd/yyyy where dd is two-digit day, mm is two digit month and yyyy is
     a four digit year e.g. 01/22/2020
     The function should return a list containing the specified observation dates.
 
     :return: a list of observation dates
     """
     # TODO: Your code here
-    pass
+    observations = []
+    num = int(input("How many observation dates you want to list?: "))
+    print("\nPlease enter some observation dates mm/dd/yyyy: ")
+    for i in range(0, num):
+        observed_date = input()
+        observations.append(observed_date)
+    print(observations)
+    return observations
 
 
 def display_record(record, cols=None):
@@ -227,7 +234,7 @@ def display_record(record, cols=None):
     E.g. if cols is an empty list or None then all the values will be displayed
     [1,'01/22/2020','Anhui','Mainland China','1/22/2020 17:00',1,0,0]
 
-    :param record: A list of data values for a movie
+    :param record: A list of data values for a record
     :param cols: A list of integer values that represent column indexes
     :return: Does not return anything
     """
