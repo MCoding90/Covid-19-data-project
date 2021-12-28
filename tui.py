@@ -168,11 +168,11 @@ def total_records(num_records):
 
     Where {num_records} is the value of the parameter passed to this function
     
-    :param num_records: the total number of movies in the data set
+    :param num_records: the total number of records in the data set
     :return: Does not return anything
     """
 
-    print(f"There are {num_records} in the data set")
+    print(f"There are {num_records} records in the data set")
 
 
 def serial_number(serial_num):
