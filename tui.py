@@ -239,14 +239,25 @@ def display_record(record, cols=None):
     :return: Does not return anything
     """
     # TODO: Your code here
-    pass
+    display_records_single_list = []
+    display_records_records_list = []
+    if cols is None:
+        for i in record:
+            print(i)
+    else:
+        for i in record:
+            for j in cols:
+                display_records_single_list.append(i[j])
+            display_records_records_list.append(display_records_single_list)
+            display_records_single_list = []
+        print(display_records_records_list)
 
 
-def display_records():
+def display_records(records, cols=None):
     """
     Task 9: Display each record in the specified list of records.
     Only the data for the specified column indexes will be displayed.
-    If no column indexes have been specified, then all the data for a movie will be displayed.
+    If no column indexes have been specified, then all the data for a records will be displayed.
 
     The function should have two parameters as follows:
 
@@ -268,3 +279,15 @@ def display_records():
     :return: Does not return anything
     """
     # TODO: Your code here
+    display_records_single_list = []
+    display_records_records_list = []
+    if cols is None:
+        for i in records:
+            print(i)
+    else:
+        for i in records:
+            for j in cols:
+                display_records_single_list.append(i[j])
+            display_records_records_list.append(display_records_single_list)
+            display_records_single_list = []
+        print(display_records_records_list)
