@@ -58,7 +58,7 @@ def progress(operation="Loading file", value=0):
     :return: does not return anything
     """
     if value == 0:
-        print(f" {operation} has started")
+        print(f"{operation} has started")
     if value >= 1 and value <= 99:
         print(f"{value} in progress")
     if value == 100:
@@ -96,10 +96,14 @@ def menu(variant=0):
     :return: nothing if invalid selection otherwise an integer for a valid selection
     """
     # TODO: Your code here
+    print("[1] Process Data")
+    print("[2] Visualise Data")
+    print("[3] Export Data")
+    print("[4] Exit")
     variant = input("Please choose one of the following menu:")
 
     if variant == '0':
-        option = input("Please select an option")
+        option = input("Please select an option:")
         if option == '1':
             return 1
         elif option == '2':
@@ -108,30 +112,27 @@ def menu(variant=0):
             return 3
         elif option == '4':
             return 4
-
-        print("[1] Process Data")
-        print("[2] Visualise Data")
-        print("[3] Export Data")
-        print("[4] Exit")
 
     elif variant == '1':
-        option = input("Please select an option")
-        if option == '1':
-            return 1
-        elif option == '2':
-            return 2
-        elif option == '3':
-            return 3
-        elif option == '4':
-            return 4
-
         print("[1] Record by Serial Number")
         print("[2] Records by Observation Date")
         print("[3] Group Records by Country/Region")
         print("[4] Summarise Records")
+        option = input("Please select an option:")
+        if option == '1':
+            return 1
+        elif option == '2':
+            return 2
+        elif option == '3':
+            return 3
+        elif option == '4':
+            return 4
 
     elif variant == '2':
-        option = input("Please select an option")
+        print("[1] Country/Region Pie Chart")
+        print("[2] Observations Chart")
+        print("[3] Animated Summary")
+        option = input("Please select an option:")
         if option == '1':
             return 1
         elif option == '2':
@@ -139,19 +140,16 @@ def menu(variant=0):
         elif option == '3':
             return 3
 
-        print("[1] Country/Region Pie Chart")
-        print("[2] Observations Chart")
-        print("[3] Animated Summary")
-
     elif variant == '3':
-        option = input("Please select an option")
+        print("[1] All Data")
+        print("[2] Data for Specific Country/Region")
+        option = input("Please select an option:")
         if option == '1':
             return 1
         elif option == '2':
             return 2
-
-        print("[1] All Data")
-        print("[2] Data for Specific Country/Region")
+    elif variant == '4':
+        var = False
     else:
         print("Wrong option selection! Please choose a valid option!")
 
