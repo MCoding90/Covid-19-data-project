@@ -26,3 +26,25 @@ The required functions are as follows:
 """
 
 # TODO: Your code here
+data = []
+
+
+def retrieve_total_records(reader):
+    for row in reader:
+        print()
+
+
+def record_serial_number():
+    pass
+
+
+def records_observation_dates():
+    pass
+
+
+def records_grouped():
+    pass
+
+
+def records_summary():
+    pass

@@ -57,13 +57,13 @@ def progress(operation, value=0):
     :param value: an integer indicating the amount of progress made
     :return: does not return anything
     """
-    status = value
+
     if value == 0:
         status = "has started"
         print(f"{operation} {status}")
     if value >= 1 and value <= 99:
-        status = "{value} %"
-        print(f"{operation} {status} in progress")
+        status = "is in progress {value} %"
+        print(f"{operation} {status}")
     if value == 100:
         status = "has completed"
         print(f"{operation} {status}")
@@ -177,7 +177,7 @@ def total_records(num_records):
     print(f"There are {num_records} records in the data set")
 
 
-def serial_number(serial_num):
+def serial_number():
     """
     Task 6: Read in the serial number of a record and return the serial number.
 
