@@ -32,7 +32,8 @@ def run():
     # - Use the appropriate functions in the module 'tui' to display a message to indicate how many records have
     # been loaded and that the data loading operation has completed.
     # TODO: Your code here
-    tui.progress()
+
+    tui.progress("Loading data")
 
     with open('C:\\Users\\czerw\\PycharmProjects\\MC_repo\\data\\covid_19_data.csv', 'r') as f:
         csv.reader = csv.reader(f)
@@ -41,7 +42,7 @@ def run():
             covid_records.append(line)
             num_records = len(covid_records)
         tui.total_records(num_records)
-    #tui.progress(value)
+    tui.progress("Loading data")
 
     while True:
         # Task 14: Using the appropriate function in the module 'tui', display a menu of options

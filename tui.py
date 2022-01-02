@@ -24,7 +24,7 @@ def welcome():
     print('-----------------------')
 
 
-def error(msg="Cannot read file!"):
+def error(msg):
     """
     Task 2: Display an error message.
 
@@ -39,7 +39,7 @@ def error(msg="Cannot read file!"):
     print(f"Error! {msg}")
 
 
-def progress(operation="Loading file", value=0):
+def progress(operation, value=0):
     """
     Task 3: Display a message to indicate the progress of an operation.
 
@@ -57,12 +57,16 @@ def progress(operation="Loading file", value=0):
     :param value: an integer indicating the amount of progress made
     :return: does not return anything
     """
+    status = value
     if value == 0:
-        print(f"{operation} has started")
+        status = "has started"
+        print(f"{operation} {status}")
     if value >= 1 and value <= 99:
-        print(f"{value} in progress")
+        status = "{value} %"
+        print(f"{operation} {status} in progress")
     if value == 100:
-        print(f"{value} % completed")
+        status = "has completed"
+        print(f"{operation} {status}")
 
 
 def menu(variant=0):
