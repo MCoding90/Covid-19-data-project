@@ -1,4 +1,5 @@
 import tui
+
 """
 This module is responsible for processing the data.  Each function in this module will take a list of records,
 process it and return the desired result.
@@ -25,6 +26,8 @@ The required functions are as follows:
 
  
 """
+
+
 # TODO: Your code here
 
 
@@ -39,10 +42,23 @@ def retrieve_total_records(t_records):
 
 
 def record_serial_number():
-
+    serial_numbers = []
+    for record in serial_numbers:
+        serial_numbers.append(record[0])
+        serial_numbers = len(serial_numbers)
+    tui.serial_number()
+    print(serial_numbers)
+    return serial_numbers
 
 
 def records_observation_dates():
+    observation_dates_list = []
+    for record in observation_dates_list:
+        observation = record[1]
+        observation.add(observation_dates_list)
+    tui.observation_dates()
+    print(observation_dates_list)
+    return observation_dates_list
 
 
 def records_grouped():
