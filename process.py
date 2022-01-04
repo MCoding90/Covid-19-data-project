@@ -30,7 +30,6 @@ The required functions are as follows:
 
 # TODO: Your code here
 
-
 def retrieve_total_records(t_records):
     data = []
     for record in data:
@@ -55,15 +54,20 @@ def records_observation_dates():
     observation_dates_list = []
     for record in observation_dates_list:
         observation = record[1]
-        observation.add(observation_dates_list)
+        observation.append(observation_dates_list)
     tui.observation_dates()
     print(observation_dates_list)
     return observation_dates_list
 
 
 def records_grouped():
-    pass
+    country_region_list = []
+    for record in country_region_list:
+        country = record[2]
+        country.append(country_region_list)
+    print(country_region_list)
+    return country_region_list
 
 
 def records_summary():
-    pass
+
