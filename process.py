@@ -27,8 +27,12 @@ The required functions are as follows:
  
 """
 
-
 # TODO: Your code here
+
+confirmed = 0
+deaths = 0
+recoveries = 0
+
 
 def retrieve_total_records(t_records):
     data = []
@@ -69,5 +73,17 @@ def records_grouped():
     return country_region_list
 
 
-def records_summary():
+def records_summary(records_sum):
+    global confirmed, deaths, recoveries
+    for record in records_sum:
+        country = {}
+        confirmed = record[5]
+        deaths = record[6]
+        recoveries = record[7]
 
+    if confirmed in country:
+        country[confirmed] += 1
+    else:
+        country[country] = {"Confirmed": 0, "Deaths": 0, "Recoveries": 0}
+        country[country][confirmed] += 1
+    return country
