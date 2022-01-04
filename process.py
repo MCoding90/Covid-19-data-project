@@ -1,3 +1,4 @@
+import tui
 """
 This module is responsible for processing the data.  Each function in this module will take a list of records,
 process it and return the desired result.
@@ -24,22 +25,24 @@ The required functions are as follows:
 
  
 """
-
 # TODO: Your code here
-data = []
 
 
-def retrieve_total_records(reader):
-    for row in reader:
-        print()
+def retrieve_total_records(t_records):
+    data = []
+    for record in data:
+        data.append(record)
+        t_records = len(data)
+    tui.total_records(t_records)
+    print(data)
+    return data
 
 
 def record_serial_number():
-    pass
+
 
 
 def records_observation_dates():
-    pass
 
 
 def records_grouped():
