@@ -9,20 +9,21 @@ Note:   any user input/output should be done using the appropriate functions in 
 """
 
 # Task 10: Import required modules
-# TODO: Your code here
+
 import tui
 import csv
 
+
 # Task 11: Create an empty list named 'covid_records'.
 # This will be used to store the data read from the source data file.
-# TODO: Your code here
+
 covid_records = []
 
 
 def run():
     # Task 12: Call the function welcome of the module 'tui'.
     # This will display our welcome message when the program is executed.
-    # TODO: Your code here
+
     tui.welcome()
     # Task 13: Load the data.
     # - Use the appropriate function in the module 'tui' to display a message to indicate that the data loading
@@ -31,15 +32,14 @@ def run():
     # You should appropriately handle the case where the file cannot be found or loaded.
     # - Use the appropriate functions in the module 'tui' to display a message to indicate how many records have
     # been loaded and that the data loading operation has completed.
-    # TODO: Your code here
+    
     operation = "Loading data"
     tui.progress(operation)
+    with open("C:/Users/czerw/PycharmProjects/MC_repo/data/covid_19_data.csv") as file:
+        csv_reader = csv.reader(file)
+        next(csv_reader)
 
-    with open('C:\\Users\\czerw\\PycharmProjects\\MC_repo\\data\\covid_19_data.csv', 'r') as f:
-        csv.reader = csv.reader(f)
-        header = next(f)
-
-        for line in f:
+        for line in csv_reader:
             covid_records.append(line)
             num_records = len(covid_records)
         tui.total_records(num_records)

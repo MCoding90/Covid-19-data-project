@@ -34,24 +34,20 @@ deaths = 0
 recoveries = 0
 
 
-def retrieve_total_records(t_records):
-    data = []
+def retrieve_total_records(data=[]):
     for record in data:
         data.append(record)
-        t_records = len(data)
-    tui.total_records(t_records)
-    print(data)
+        data = len(data)
+    tui.total_records(data)
     return data
 
 
-def record_serial_number():
-    serial_numbers = []
-    for record in serial_numbers:
-        serial_numbers.append(record[0])
-        serial_numbers = len(serial_numbers)
+def record_serial_number(data=[]):
+    for record in data:
+        data.append(record[0])
+        data = len(data)
     tui.serial_number()
-    print(serial_numbers)
-    return serial_numbers
+    return data
 
 
 def records_observation_dates():
