@@ -34,7 +34,9 @@ deaths = 0
 recoveries = 0
 
 
-def retrieve_total_records(data=[]):
+def retrieve_total_records(data=None):
+    if data is None:
+        data = []
     for record in data:
         data.append(record)
         data = len(data)
@@ -42,11 +44,14 @@ def retrieve_total_records(data=[]):
     return data
 
 
-def record_serial_number(data=[]):
+def record_serial_number(data=None):
+    if data is None:
+        data = []
+    tui.serial_number()
     for record in data:
         data.append(record[0])
         data = len(data)
-    tui.serial_number()
+    tui.display_record(data)
     return data
 
 

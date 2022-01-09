@@ -99,12 +99,13 @@ def menu(variant=0):
 
     :return: nothing if invalid selection otherwise an integer for a valid selection
     """
-    # TODO: Your code here
-    print("[1] Process Data")
-    print("[2] Visualise Data")
-    print("[3] Export Data")
-    print("[4] Exit")
-    variant = input("Please choose one of the following menu:")
+    print(f"""Please select one of the following options:
+    [1] Process Data
+    [2] Visualise Data
+    [3] Export Data
+    [4] Exit
+    """)
+    variant = input("Your selection:")
 
     if variant == '0':
         option = input("Please select an option:")
@@ -118,11 +119,14 @@ def menu(variant=0):
             return 4
 
     elif variant == '1':
-        print("[1] Record by Serial Number")
-        print("[2] Records by Observation Date")
-        print("[3] Group Records by Country/Region")
-        print("[4] Summarise Records")
-        option = input("Please select an option:")
+        print(f"""Please select an option:
+        [1] Record by Serial Number
+        [2] Records by Observation Date
+        [3] Group Records by Country/Region
+        [4] Summarise Records
+        """)
+
+        option = input("Your selection:")
         if option == '1':
             return 1
         elif option == '2':
@@ -133,10 +137,13 @@ def menu(variant=0):
             return 4
 
     elif variant == '2':
-        print("[1] Country/Region Pie Chart")
-        print("[2] Observations Chart")
-        print("[3] Animated Summary")
-        option = input("Please select an option:")
+        print(f"""Please select an option:
+        [1] Country/Region Pie Chart
+        [2] Observations Chart
+        [3] Animated Summary
+        """)
+
+        option = input("Your selection:")
         if option == '1':
             return 1
         elif option == '2':
@@ -145,9 +152,12 @@ def menu(variant=0):
             return 3
 
     elif variant == '3':
-        print("[1] All Data")
-        print("[2] Data for Specific Country/Region")
-        option = input("Please select an option:")
+        print(f"""Please select an option:
+        [1] All Data
+        [2] Data for Specific Country/Region
+        """)
+
+        option = input("Your selection:")
         if option == '1':
             return 1
         elif option == '2':
@@ -252,7 +262,7 @@ def display_record(record, cols=None):
                 display_records_single_list.append(i[j])
             display_records_records_list.append(display_records_single_list)
             display_records_single_list = []
-        print(display_records_records_list)
+        print(display_records_single_list)
 
 
 def display_records(records, cols=None):
