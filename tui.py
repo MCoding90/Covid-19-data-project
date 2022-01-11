@@ -99,75 +99,39 @@ def menu(variant=0):
 
     :return: nothing if invalid selection otherwise an integer for a valid selection
     """
-    print(f"""Please select one of the following options:
-    [1] Process Data
-    [2] Visualise Data
-    [3] Export Data
-    [4] Exit
-    """)
-    variant = input("Your selection:")
+    if variant == 0:
+        print(f"""Please select one of the following options:
+        [1] Process Data
+        [2] Visualise Data
+        [3] Export Data
+        [4] Exit
+        """)
 
-    if variant == '0':
-        option = input("Please select an option:")
-        if option == '1':
-            return 1
-        elif option == '2':
-            return 2
-        elif option == '3':
-            return 3
-        elif option == '4':
-            return 4
-
-    elif variant == '1':
+    elif variant == 1:
         print(f"""Please select an option:
         [1] Record by Serial Number
         [2] Records by Observation Date
         [3] Group Records by Country/Region
         [4] Summarise Records
-        """)
+         """)
+        return 1
 
-        option = input("Your selection:")
-        if option == '1':
-            return 1
-        elif option == '2':
-            return 2
-        elif option == '3':
-            return 3
-        elif option == '4':
-            return 4
-
-    elif variant == '2':
+    elif variant == 2:
         print(f"""Please select an option:
         [1] Country/Region Pie Chart
         [2] Observations Chart
         [3] Animated Summary
         """)
+        return 2
 
-        option = input("Your selection:")
-        if option == '1':
-            return 1
-        elif option == '2':
-            return 2
-        elif option == '3':
-            return 3
-
-    elif variant == '3':
+    elif variant == 3:
         print(f"""Please select an option:
         [1] All Data
         [2] Data for Specific Country/Region
         """)
-
-        option = input("Your selection:")
-        if option == '1':
-            return 1
-        elif option == '2':
-            return 2
-    elif variant == '4':
-        var = False
+        return 3
     else:
         print("Wrong option selection! Please choose a valid option!")
-
-    return variant
 
 
 def total_records(num_records):

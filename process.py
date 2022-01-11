@@ -1,5 +1,7 @@
 import tui
 
+import main
+
 """
 This module is responsible for processing the data.  Each function in this module will take a list of records,
 process it and return the desired result.
@@ -49,8 +51,7 @@ def record_serial_number(data=None):
         data = []
     tui.serial_number()
     for record in data:
-        data.append(record[0])
-        data = len(data)
+        int(record[0])
     tui.display_record(data)
     return data
 
@@ -61,7 +62,6 @@ def records_observation_dates():
         observation = record[1]
         observation.append(observation_dates_list)
     tui.observation_dates()
-    print(observation_dates_list)
     return observation_dates_list
 
 

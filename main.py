@@ -14,7 +14,6 @@ import tui
 import csv
 import process
 
-
 # Task 11: Create an empty list named 'covid_records'.
 # This will be used to store the data read from the source data file.
 
@@ -33,9 +32,8 @@ def run():
     # You should appropriately handle the case where the file cannot be found or loaded.
     # - Use the appropriate functions in the module 'tui' to display a message to indicate how many records have
     # been loaded and that the data loading operation has completed.
-    
-    operation = "Loading data"
-    tui.progress(operation)
+
+    tui.progress("Loading data")
     with open("C:/Users/czerw/PycharmProjects/MC_repo/data/covid_19_data.csv") as file:
         csv_reader = csv.reader(file)
         next(csv_reader)
@@ -44,15 +42,15 @@ def run():
             covid_records.append(line)
             num_records = len(covid_records)
         tui.total_records(num_records)
-    operation = "Loading data has completed"
-    tui.progress(operation)
+    tui.progress(100)
 
     while True:
         # Task 14: Using the appropriate function in the module 'tui', display a menu of options
         # for the different operations that can be performed on the data (menu variant 0).
         # Assign the selected option to a suitable local variable
-        # TODO: Your code here
-        tui.menu()
+
+        tui.menu(0)
+        response = int(input())
 
         # Task 15: Check if the user selected the option for processing data.  If so, then do the following:
         # - Use the appropriate function in the module tui to display a message to indicate that the data processing
@@ -97,15 +95,28 @@ def run():
         #       - Use the appropriate function in the module 'tui' to display the summary
         #       - Use the appropriate function in the module 'tui' to indicate that the summary
         #       process has completed.
-        # TODO: Your code here
-        tui.menu(variant=1)
-        operation = "Data Processing"
-        tui.progress(operation)
-        operation = "Data processing has completed"
-        tui.progress(operation)
 
-        process.record_serial_number()
+        if response == 1:
+            tui.menu(1)
+        option = int(input())
+        if option == 1:
+            pass
+        elif option == 2:
+            pass
+        elif option == 3:
+            pass
+        elif option == 4:
+            pass
 
+        # operation = "Data Processing"
+        # tui.progress(operation)
+        # operation = "Data processing has completed"
+        # tui.progress(operation)
+
+        # process.record_serial_number([0])
+        # process.records_observation_dates()
+        # process.records_grouped()
+        # process.records_summary()
 
         # Task 21: Check if the user selected the option for visualising data.
         # If so, then do the following:
@@ -116,7 +127,15 @@ def run():
         #   - call the appropriate function in the module 'visual'
         # - Use the appropriate function in the module 'tui' to display a message to indicate that the
         # data visualisation operation has completed.
-        # TODO: Your code here
+
+        elif response == 2:
+            tui.menu(2)
+        if option == 1:
+            pass
+        elif option == 2:
+            pass
+        elif option == 3:
+            pass
 
         # Task 25: Check if the user selected the option for exporting data.  If so, then do the following:
         # - Use the appropriate function in the module 'tui' to retrieve the type of data to be exported.
@@ -129,17 +148,19 @@ def run():
         # To export the data, you should demonstrate the application of OOP principles including the concepts of
         # abstraction and inheritance.  You should create suitable classes with appropriate methods.
         # You should use these to write the records (either all or only those for a specific country/region) to a JSON file.
-        # TODO: Your code here
+
+        elif response == 3:
+            tui.menu(3)
 
         # Task 26: Check if the user selected the option for exiting the program.
         # If so, then break out of the loop
-        # TODO: Your code here
 
+        elif response == 4:
+            break
         # Task 27: If the user selected an invalid option then use the appropriate function of the
         # module tui to display an error message
-        # TODO: Your code here
-
-        pass  # can remove
+        else:
+            tui.error("Invalid selection! Please choose a valid option.")
 
 
 if __name__ == "__main__":
