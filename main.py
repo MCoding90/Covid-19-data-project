@@ -24,7 +24,6 @@ def run():
     # Task 12: Call the function welcome of the module 'tui'.
     # This will display our welcome message when the program is executed.
 
-    global option1
     tui.welcome()
     # Task 13: Load the data.
     # - Use the appropriate function in the module 'tui' to display a message to indicate that the data loading
@@ -97,22 +96,28 @@ def run():
         #       process has completed.
 
         if response == 1:
+            tui.progress("Data processing", 0)
             option = tui.menu(response)
             if option == 1:
+                tui.progress("Record retrieval process", 0)
                 process.record_serial_number(covid_records)
+                tui.progress("Record retrieval process", 100)
             elif option == 2:
+                tui.progress("Records retrieval process", 0)
+                pass
+                tui.progress("Records retrieval process", 100)
                 pass
             elif option == 3:
+                tui.progress("Grouping process", 0)
                 pass
+                tui.progress("Grouping process", 100)
             elif option == 4:
+                tui.progress("Summary process", 0)
                 pass
+                tui.progress("Summary process", 100)
+            tui.progress("Data processing", 100)
 
-        # operation = "Data Processing"
-        # tui.progress(operation)
-        # operation = "Data processing has completed"
-        # tui.progress(operation)
-
-        # process.record_serial_number([0])
+        # process.record_serial_number()
         # process.records_observation_dates()
         # process.records_grouped()
         # process.records_summary()
@@ -128,13 +133,20 @@ def run():
         # data visualisation operation has completed.
 
         elif response == 2:
+            tui.progress("Data visualisation operation", 0)
             option = tui.menu(response)
             if option == 1:
-                process.record_serial_number(covid_records)
+                tui.progress("Pie chart visualisation", 0)
+                pass
+                tui.progress("Pie chart visualisation", 100)
             elif option == 2:
+                tui.progress("Observations chart visualisation", 0)
                 pass
             elif option == 3:
+                tui.progress("Animated visualisation", 0)
                 pass
+                tui.progress("Animated visualisation", 100)
+            tui.progress("Data visualisation operation", 100)
 
         # Task 25: Check if the user selected the option for exporting data.  If so, then do the following:
         # - Use the appropriate function in the module 'tui' to retrieve the type of data to be exported.
@@ -145,16 +157,17 @@ def run():
         # - Use the appropriate function in the module 'tui' to indicate that the export operation has completed.
         #
         # To export the data, you should demonstrate the application of OOP principles including the concepts of
-        # abstraction and inheritance.  You should create suitable classes with appropriate methods.
-        # You should use these to write the records (either all or only those for a specific country/region) to a JSON file.
+        # abstraction and inheritance.  You should create suitable classes with appropriate methods. You should use
+        # these to write the records (either all or only those for a specific country/region) to a JSON file.
 
         elif response == 3:
+            tui.progress("Export operation", 0)
             option = tui.menu(response)
             if option == 1:
                 pass
             elif option == 2:
                 pass
-
+            tui.progress("Export operation", 100)
         # Task 26: Check if the user selected the option for exiting the program.
         # If so, then break out of the loop
 

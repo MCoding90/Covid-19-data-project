@@ -122,7 +122,7 @@ def menu(variant=0):
         """)
 
     elif variant == 3:
-        print(f""""Please select an option:
+        print(f"""Please select an option:
         [1] All Data
         [2] Data for Specific Country/Region
         """)

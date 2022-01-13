@@ -55,13 +55,11 @@ def record_serial_number(data):
         return record
 
 
-def records_observation_dates():
-    observation_dates_list = []
-    for record in observation_dates_list:
-        observation = record[1]
-        observation.append(observation_dates_list)
-    tui.observation_dates()
-    return observation_dates_list
+def records_observation_dates(records):
+    observations = tui.observation_dates()
+    for item in observations:
+        if item in records:
+            print(item)
 
 
 def records_grouped():
