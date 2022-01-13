@@ -24,6 +24,7 @@ def run():
     # Task 12: Call the function welcome of the module 'tui'.
     # This will display our welcome message when the program is executed.
 
+    global option1
     tui.welcome()
     # Task 13: Load the data.
     # - Use the appropriate function in the module 'tui' to display a message to indicate that the data loading
@@ -33,7 +34,7 @@ def run():
     # - Use the appropriate functions in the module 'tui' to display a message to indicate how many records have
     # been loaded and that the data loading operation has completed.
 
-    tui.progress("Loading data")
+    tui.progress("Loading data", 0)
     with open("C:/Users/czerw/PycharmProjects/MC_repo/data/covid_19_data.csv") as file:
         csv_reader = csv.reader(file)
         next(csv_reader)
@@ -42,15 +43,14 @@ def run():
             covid_records.append(line)
             num_records = len(covid_records)
         tui.total_records(num_records)
-    tui.progress(100)
+    tui.progress("Loading data", 100)
 
     while True:
         # Task 14: Using the appropriate function in the module 'tui', display a menu of options
         # for the different operations that can be performed on the data (menu variant 0).
         # Assign the selected option to a suitable local variable
 
-        tui.menu(0)
-        response = int(input())
+        response = tui.menu()
 
         # Task 15: Check if the user selected the option for processing data.  If so, then do the following:
         # - Use the appropriate function in the module tui to display a message to indicate that the data processing
@@ -97,16 +97,15 @@ def run():
         #       process has completed.
 
         if response == 1:
-            tui.menu(1)
-        option = int(input())
-        if option == 1:
-            pass
-        elif option == 2:
-            pass
-        elif option == 3:
-            pass
-        elif option == 4:
-            pass
+            option = tui.menu(response)
+            if option == 1:
+                process.record_serial_number(covid_records)
+            elif option == 2:
+                pass
+            elif option == 3:
+                pass
+            elif option == 4:
+                pass
 
         # operation = "Data Processing"
         # tui.progress(operation)
@@ -129,13 +128,13 @@ def run():
         # data visualisation operation has completed.
 
         elif response == 2:
-            tui.menu(2)
-        if option == 1:
-            pass
-        elif option == 2:
-            pass
-        elif option == 3:
-            pass
+            option = tui.menu(response)
+            if option == 1:
+                process.record_serial_number(covid_records)
+            elif option == 2:
+                pass
+            elif option == 3:
+                pass
 
         # Task 25: Check if the user selected the option for exporting data.  If so, then do the following:
         # - Use the appropriate function in the module 'tui' to retrieve the type of data to be exported.
@@ -150,7 +149,11 @@ def run():
         # You should use these to write the records (either all or only those for a specific country/region) to a JSON file.
 
         elif response == 3:
-            tui.menu(3)
+            option = tui.menu(response)
+            if option == 1:
+                pass
+            elif option == 2:
+                pass
 
         # Task 26: Check if the user selected the option for exiting the program.
         # If so, then break out of the loop

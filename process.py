@@ -46,14 +46,13 @@ def retrieve_total_records(data=None):
     return data
 
 
-def record_serial_number(data=None):
-    if data is None:
-        data = []
+def record_serial_number(data):
     tui.serial_number()
-    for record in data:
-        int(record[0])
-    tui.display_record(data)
-    return data
+    for record in data[0]:
+        serial_number = record
+        tui.display_record(data)
+        print(serial_number[0])
+        return record
 
 
 def records_observation_dates():

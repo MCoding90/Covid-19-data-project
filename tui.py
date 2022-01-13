@@ -104,8 +104,7 @@ def menu(variant=0):
         [1] Process Data
         [2] Visualise Data
         [3] Export Data
-        [4] Exit
-        """)
+        [4] Exit""")
 
     elif variant == 1:
         print(f"""Please select an option:
@@ -114,7 +113,6 @@ def menu(variant=0):
         [3] Group Records by Country/Region
         [4] Summarise Records
          """)
-        return 1
 
     elif variant == 2:
         print(f"""Please select an option:
@@ -122,16 +120,18 @@ def menu(variant=0):
         [2] Observations Chart
         [3] Animated Summary
         """)
-        return 2
 
     elif variant == 3:
-        print(f"""Please select an option:
+        print(f""""Please select an option:
         [1] All Data
         [2] Data for Specific Country/Region
         """)
-        return 3
+
     else:
         print("Wrong option selection! Please choose a valid option!")
+
+    response = int(input("Your selection: "))
+    return response
 
 
 def total_records(num_records):
@@ -160,7 +160,6 @@ def serial_number():
 
     :return: the serial number for a record
     """
-    # TODO: Your code here
 
     print("Please enter a serial number for a record: ")
     serial_num = int(input())
@@ -178,7 +177,6 @@ def observation_dates():
 
     :return: a list of observation dates
     """
-    # TODO: Your code here
     observations = []
     num = int(input("How many observation dates you want to list?: "))
     print("\nPlease enter some observation dates mm/dd/yyyy: ")
@@ -217,6 +215,10 @@ def display_record(record, cols=None):
     # TODO: Your code here
     display_records_single_list = []
     display_records_records_list = []
+    if cols is [1, 3]:
+        for i in record:
+            print(i)
+
     if cols is None:
         for i in record:
             print(i)
