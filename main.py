@@ -34,7 +34,7 @@ def run():
     # been loaded and that the data loading operation has completed.
 
     tui.progress("Loading data", 0)
-    with open("C:/Users/czerw/PycharmProjects/MC_repo/data/covid_19_data.csv") as file:
+    with open("data/covid_19_data.csv") as file:
         csv_reader = csv.reader(file)
         next(csv_reader)
 
@@ -116,11 +116,6 @@ def run():
                 pass
                 tui.progress("Summary process", 100)
             tui.progress("Data processing", 100)
-
-        # process.record_serial_number()
-        # process.records_observation_dates()
-        # process.records_grouped()
-        # process.records_summary()
 
         # Task 21: Check if the user selected the option for visualising data.
         # If so, then do the following:
