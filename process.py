@@ -1,7 +1,5 @@
 import tui
 
-import main
-
 """
 This module is responsible for processing the data.  Each function in this module will take a list of records,
 process it and return the desired result.
@@ -29,11 +27,8 @@ The required functions are as follows:
  
 """
 
-# TODO: Your code here
 
-confirmed = 0
-deaths = 0
-recoveries = 0
+# TODO: Your code here
 
 
 def retrieve_total_records(data=None):
@@ -63,25 +58,8 @@ def records_observation_dates(records):
 
 
 def records_grouped():
-    country_region_list = []
-    for record in country_region_list:
-        country = record[2]
-        country.append(country_region_list)
-    print(country_region_list)
-    return country_region_list
+    pass
 
 
-def records_summary(records_sum):
-    global confirmed, deaths, recoveries
-    for record in records_sum:
-        country = {}
-        confirmed = record[5]
-        deaths = record[6]
-        recoveries = record[7]
-
-    if confirmed in country:
-        country[confirmed] += 1
-    else:
-        country[country] = {"Confirmed": 0, "Deaths": 0, "Recoveries": 0}
-        country[country][confirmed] += 1
-    return country
+def records_summary():
+    pass

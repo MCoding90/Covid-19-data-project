@@ -212,23 +212,13 @@ def display_record(record, cols=None):
     :param cols: A list of integer values that represent column indexes
     :return: Does not return anything
     """
-    # TODO: Your code here
-    display_records_single_list = []
-    display_records_records_list = []
-    if cols is [1, 3]:
-        for i in record:
-            print(i)
-
+    display_record_list = []
     if cols is None:
-        for i in record:
-            print(i)
+        print(record)
     else:
-        for i in record:
-            for j in cols:
-                display_records_single_list.append(i[j])
-            display_records_records_list.append(display_records_single_list)
-            display_records_single_list = []
-        print(display_records_single_list)
+        for i in range(0, len(cols)):
+            display_record_list.append(record[cols[i]])
+        print(display_record_list)
 
 
 def display_records(records, cols=None):
@@ -256,8 +246,7 @@ def display_records(records, cols=None):
     :param cols: A list of integer values that represent column indexes
     :return: Does not return anything
     """
-    # TODO: Your code here
-    display_records_single_list = []
+    display_single_record_list = []
     display_records_records_list = []
     if cols is None:
         for i in records:
@@ -265,7 +254,7 @@ def display_records(records, cols=None):
     else:
         for i in records:
             for j in cols:
-                display_records_single_list.append(i[j])
-            display_records_records_list.append(display_records_single_list)
-            display_records_single_list = []
+                display_single_record_list.append(i[j])
+            display_records_records_list.append(display_single_record_list)
+            display_single_record_list = []
         print(display_records_records_list)

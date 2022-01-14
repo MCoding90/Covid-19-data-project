@@ -100,7 +100,7 @@ def run():
             option = tui.menu(response)
             if option == 1:
                 tui.progress("Record retrieval process", 0)
-                process.record_serial_number(covid_records)
+                pass
                 tui.progress("Record retrieval process", 100)
             elif option == 2:
                 tui.progress("Records retrieval process", 0)
